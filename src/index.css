@@ -1,0 +1,39 @@
+@import "tailwindcss";
+
+/* Тёмная тема всегда */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Цвета темы в духе shadcn: компоненты глобусов читают --background, --foreground, --primary */
+:root {
+  --background: #050914;
+  --foreground: #e6edfb;
+  --primary: #6ea8ff;
+  --primary-foreground: #04101f;
+  --muted: #121a2e;
+  --muted-foreground: #8d9bb8;
+  --accent: #16213a;
+  --border: #22304f;
+  --ring: #6ea8ff;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-border: var(--border);
+  --color-ring: var(--ring);
+  --font-sans: "Manrope", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Unbounded", "Manrope", ui-sans-serif, sans-serif;
+}
+
+html { scroll-behavior: smooth; background: var(--background); color-scheme: dark; }
+body { margin: 0; background: var(--background); color: var(--foreground); -webkit-font-smoothing: antialiased; }
+section[id] { scroll-margin-top: 16px; }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+}
